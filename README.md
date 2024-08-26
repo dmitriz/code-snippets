@@ -8,6 +8,7 @@
 [![dependencies][code-snippets-dependencies-image] ][code-snippets-dependencies-url]
 [![devdependencies][code-snippets-devdependencies-image] ][code-snippets-devdependencies-url]
 [![Codacy Badge][code-snippets-codacy-image] ][code-snippets-codacy-url]
+[![semantic-release][semantic-image] ][semantic-url]
 
 [code-snippets-icon]: https://nodei.co/npm/code-snippets.png?downloads=true
 [code-snippets-url]: https://npmjs.org/package/code-snippets
@@ -19,6 +20,8 @@
 [code-snippets-devdependencies-url]: https://david-dm.org/bahmutov/code-snippets#info=devDependencies
 [code-snippets-codacy-image]: https://www.codacy.com/project/badge/99acaf40b1f1483c80016eb31fbaef49
 [code-snippets-codacy-url]: https://www.codacy.com/public/bahmutov/code-snippets.git
+[semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-url]: https://github.com/semantic-release/semantic-release
 
 ![fist paint](https://raw.githubusercontent.com/bahmutov/code-snippets/master/first-paint-code-snippet.png)
 
@@ -35,20 +38,24 @@ Note: code snippets do NOT have access to the full console API, for example no a
 
 * [test-script-injection.js](test-script-injection.js) - tries to create a new
   inline script tag to test if page allows it.
+* [harlem-shake-xss.js](harlem-shake-xss.js) - little XSS script that injects
+  [Harlem Shake music](https://github.com/DinisCruz/XSS-Pocs/blob/master/pocs/dance-xss.js)
 
 ### DOM and CPU generic performance
 
 * [boilerplate.js](boilerplate.js) - boilerplate for loading and running a remote code script
-(see [remote download](#remote-download)).
+  (see [remote download](#remote-download)).
 * [first-paint.js](first-paint.js) - time from page reload to first visible contents.
 * [timing.js](timing.js) - Detailed page timing information,
-from [addyosmani/timing.js](https://github.com/addyosmani/timing.js).
+  from [addyosmani/timing.js](https://github.com/addyosmani/timing.js).
 * [time-method-call.js](time-method-call.js) - measures single method call time.
 * [profile-method-call.js](profile-method-call.js) - profiles a single method call.
 * [profile-prototype-method.js](profile-prototype-method.js) - profiles a single method call
-that is on a prototype object, not on an instance.
+  that is on a prototype object, not on an instance.
 * [profile-separate-calls.js](profile-separate-calls.js) can profile actions where separate
-method calls start and stop the operation.
+  method calls start and stop the operation.
+* [css-layout.js](css-layout.js) draws boundary around every DOM element for
+  clarity.
 
 ### Storage measurements
 
@@ -91,6 +98,8 @@ if your [exception handler](http://glebbahmutov.com/blog/catch-all-errors-in-ang
 
 * [github-pull-request-template.js](github-pull-request-template.js) - better GitHub pull request
 text, based on the blog post [Enforce standards while submitting a pull request](http://krasimirtsonev.com/blog/article/enforce-standards-while-submitting-a-pull-request) by [Krasimir Tsonev](https://github.com/krasimir).
+* [remove-all-but.js](remove-all-but.js) - removes all elements in the page, except the ones in
+the trees with specified selectors. Can be used to quickly clean up the page and leave just the essentials.
 
 All snippets, including mine are distributed under MIT license.
 
@@ -98,6 +107,9 @@ All snippets, including mine are distributed under MIT license.
 
 You can update local code snippets by downloading new versions from this github repository.
 Create a new code snippet and copy the source from [update-code-snippets.js](update-code-snippets.js).
+
+Note: the approach below does not work any more,
+see [the open issue](https://github.com/bahmutov/code-snippets/issues/23).
 
 You will run this code snippet in an unusual way. First, open any web page, even an empty tab.
 Open the DevTools in **undocked** mode (Command+Option+I on Mac). Then open the DevTools **again**,
